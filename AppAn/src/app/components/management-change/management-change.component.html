@@ -1,0 +1,61 @@
+<p>management-change works!</p>
+
+
+
+<form #f="ngForm"  (ngSubmit)="submit(f)" *ngIf="!showPrds">
+   <div class="d-flex flex-row" *ngFor="let item of prd | keyvalue">
+    <div  *ngIf="item.key!='_id' && item.key!='categoryId' && item.key!='images' ">
+      <span>{{item.key}}:</span>
+      <!-- <div *ngIf="item.value">{{item.value}} </div> -->
+      <input required="" [(ngModel)]="item.value" id="{{item.key}}" name="{{item.key}}" type="text" >
+    </div>
+  </div>
+  <div>
+    <input (change)="AddPhotos($event)" style="display: none;" #file ngModel id="image-file" type="file" name="mySingleImage" value="chang" accept="image/*" multiple>>
+    <div>My images from server</div>
+    <div class="d-flex flex-row "  >
+      <div id="{{img.path}}" class="images" *ngFor="let img of prd.images" @image1>
+        <button type="button" (click)="removImageFromServer(img)" class="d-flex remove">x</button>
+        <img class="img"  src="/assets/product-images/{{img.path}}" alt="">
+      </div>
+    </div>
+    <button type="button" (click)="file.click()">images</button>
+    <div>add images</div>
+    <div class="d-flex flex-row ">
+      <div class=" images" *ngFor="let item of imagesForShow" @image1>
+        <button type="button" (click)="removeImage(item)" class="d-flex remove">x</button>
+        <img class="img"  [src]="item" alt="{{item}}">
+      </div>
+    </div>
+  </div>
+  <!-- <button [disabled]="!f.valid" type="submit">Add Product</button> -->
+  <button  type="submit">Add Product</button>
+</form>
+
+<!-- products list -->
+<!-- <div *ngIf="false" class="d-flex flex-row prds container">
+  <div (click)="ChoosePrdToChange(item)" *ngFor="let item of productsOfCategory" class="d-flex card card-p">
+    <img class="img-p card-img-top" src="/assets/product-images/{{img.path}}" alt="" *ngFor="let img of item.images.slice(0,1)">
+    <div class="card-body name-prd d-flex" >{{item.name}}</div>
+  </div>
+</div> -->
+
+<div class="container card" *ngIf="showPrds">
+  <div class="card-header">
+    <!-- <select name="" id=""></select> -->
+    <input type="text" class=" form-control my-text" placeholder="Search" [(ngModel)]="searchProduct">
+    <select #category="ngModel" (change)="changeCategory(category)" [ngModel]="defualtProducts" name="categories" id="">
+      <option value="all-products">all product</option>
+      <option  value="{{c._id}}" *ngFor="let c of categories">{{c.name}}</option>
+    </select>
+  </div>
+  <div class=" card-body">
+    <div class="d-flex flex-row prds container">
+      <div (click)="ChoosePrdToChange(item)" *ngFor="let item of productsOfCategory | filterProducts:searchProduct" class="d-flex card card-p">
+        <img class="img-p card-img-top" src="/assets/product-images/{{img.path}}" alt="" *ngFor="let img of item.images.slice(0,1)">
+        <div class="card-body name-prd d-flex" >{{item.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+

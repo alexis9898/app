@@ -1,0 +1,48 @@
+<style>
+  .form-info{
+    gap: 5px;
+  }
+  .form-control{
+    border: 1px solid #6c757d ;
+  }
+  .form-control:focus{
+    box-shadow: 0 0 5px 0.05rem #6c757d;
+    border-color: #6c757d;
+  }
+  .btn{
+    margin-top: 5px;
+  }
+  input.ng-invalid.ng-touched{
+    border: 1px solid red;
+  }
+  input.ng-invalid.ng-touched:focus{
+    box-shadow: 0 0 5px 0.05rem red;
+  }
+</style>
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">Buy</div>
+    <div class="card-body ">
+      <form (ngSubmit)="SubmitOrder()" #f="ngForm">
+        <div class="d-flex flex-column form-info">
+          <div class="form-group">
+              <label for="nameId">Name</label>
+              <input required class="form-control" id="nameId" name="nameId"  type="text" ngModel
+              #myname="ngModel"  >
+              <div class="alert alert-danger" [hidden]="myname.valid || !myname.touched ">
+                no
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" id="password" type="text" name="password" required ngModel>
+          </div>
+        </div>
+        <button [disabled]="!f.valid" class="btn btn-outline-secondary " type="submit" >Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+

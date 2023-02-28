@@ -1,0 +1,29 @@
+.relative{
+  position: relative;
+  /* overflow:visible; */
+  border: 1px solid red;
+}
+
+.absolute{
+  position: absolute;
+  bottom: 0;
+  /* transform: translateY(100%) ; */
+  border: 1px solid blue;
+  margin-top:300px ;
+}
+
+.fix{
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+}
+
+
+.h{
+ height: 18rem;
+}
+body{
+  position: relative;
+  overflow: scroll;
+}
+

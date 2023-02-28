@@ -1,0 +1,154 @@
+<div class="d-flex flex-row">
+  <div class="d-flex flex-column full-width head-prds">
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-row">
+        <span>קט1</span>
+        <span>ק21</span>
+      </div>
+      <h4>שם הכותרת</h4>
+      <div class="d-flex flex-row option">
+        <div class="d-flex flex-row">
+          <div>
+            <span>כל המוצרים</span>
+            <span>(12)</span>
+          </div>
+          <div>
+            <span>מבצעים</span>
+            <span>(12)</span>
+          </div>
+        </div>
+        <div>
+          <button (click)="column()" class="icon-column">column</button>
+          <button (click)="row()" class="icon-row">row</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="btn">row</div>
+    <div class="btn" (click)="column='column'" >culomn</div> -->
+    <div class="d-flex flex-row detail">
+      <div class="info-category"></div>
+      <div class="product-list {{option}}">
+        <div class="product " *ngFor="let p of products">
+          <div class="img">
+            <img
+              *ngFor="let img of p.images.slice(0, 1)"
+              src="/assets/product-images/{{ img.path }}"
+              alt=""
+            />
+          </div>
+          <div class="product-detail">
+            <div class="d-flex flex-column">
+              <span class="product-name">{{ p.name }}</span>
+              <span class="forma">שופרסל</span>
+            </div>
+            <div>
+              <span class="product-price">₪{{ p.price }}</span>
+            </div>
+            <!-- <span>{{}}</span> -->
+          </div>
+          <div class="add">
+            <div class="d-flex flex-row">
+              <button (click)="addPrd(p)" class="btn-change">+</button>
+              <input
+                [(ngModel)]="p.quantity"
+                class="sum"
+                type="number"
+                value="1"
+                min="1"
+              />
+              <span>יח'</span>
+              <button class="btn-change" (click)="deletePrd(p)">-</button>
+            </div>
+            <button (click)="sendToCart(p)" class="btn-add">הוסף</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart">
+    <cart></cart>
+    <app-chek-out></app-chek-out>
+  </div>
+</div>
+
+<div *ngIf="false" class="container-p">
+  <div class="container c-p-1 p-3">
+    <div class="card">
+      <div class="card-header d-flex flex-row">
+        <h2>Products list</h2>
+        <input
+          type="text"
+          class="form-control my-text"
+          placeholder="Search"
+          [(ngModel)]="searchProduct"
+        />
+        <div class="d-flex flex-row gap">
+          <button
+            [class.active]="sortingBy == 'price'"
+            (click)="sort('price')"
+            type="button"
+            class="btn btn-outline-secondary"
+          >
+            Price
+          </button>
+          <button
+            [class.active]="sortingBy == 'name'"
+            (click)="sort('name')"
+            type="button"
+            class="btn btn-outline-secondary"
+          >
+            Name
+          </button>
+        </div>
+      </div>
+      <div class="d-flex flex-column card-body">
+        <a
+          [routerLink]="['/product']"
+          class="d-flex flex-row prds"
+          *ngFor="
+            let p of products
+              | filterProducts : searchProduct
+              | productsSort : sortingBy
+          "
+        >
+          <div class="d-flex flex-row">
+            <div class="div-image">
+              <img
+                class="img"
+                *ngFor="let img of p.images.slice(0, 1)"
+                src="/assets/product-images/{{ img.path }}"
+                alt=""
+              />
+            </div>
+            <div>
+              <h4>name: {{ p.name }}</h4>
+              <p class="price">Product price: {{ p["price"] }}$</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <button
+              type="button"
+              class="btn-add btn btn-outline-secondary"
+              (click)="addCart1(p)"
+            >
+              Add to cart
+            </button>
+          </div>
+        </a>
+        <!-- <hr> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="c-p-2 p-3">
+    <cart></cart>
+    <app-chek-out></app-chek-out>
+  </div>
+</div>
+<!-- <div *ngIf="_CartService.MyShoppingList.length>0">
+    <h2 >My Cart</h2>
+    <div *ngFor="let p of _CartService.MyShoppingList">
+      <p>Product name: {{p.name}}</p>
+    </div>
+    <p >Total Price: {{_CartService.totalPrice()}}$ </p>
+  </div> -->

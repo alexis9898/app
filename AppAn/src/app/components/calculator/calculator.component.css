@@ -1,0 +1,83 @@
+.wrap{
+  flex-wrap: wrap;
+}
+
+.button{
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  /* margin: 3px; */
+  overflow: hidden;
+}
+.button:hover{
+  background-color: rgb(243, 243, 243);
+  box-shadow: 0px 0px 4px gainsboro;
+}
+.numbers{
+  width: 210px;
+  flex-wrap: wrap-reverse;
+
+}
+.div-btn{
+
+}
+
+
+
+.center{
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  /* margin-left: auto; */
+  /* transform: translateX(42%); */
+  width: 100vh;
+  height: 100%;
+}
+.result{
+  height: 120px;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: rgb(0, 255, 94);
+  padding-right:10px ;
+}
+.result-text{
+  font-size: 1.8rem;
+}
+.value{
+  font-size: 1.3rem;
+}
+.buttons1{
+  background-color: aqua;
+}
+.button1{
+  margin: 5px;
+  width: 130px;
+  height: 100px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 100%;
+}
+.button1:hover{
+  background-color: aliceblue;
+}
+.not-numbers-btn{
+  color: tomato;
+}
+.equal{
+  color: white;
+  background-color: tomato;
+}
+.equal:hover{
+  background-color: rgb(250, 61, 28);
+}
+.activeValue{
+  font-size: 2rem;
+}
+
+

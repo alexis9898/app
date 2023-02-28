@@ -1,0 +1,21 @@
+.images{
+  position: relative;
+}
+.img{
+  width:120px;
+  height:80px;
+}
+.remove{
+  width: 30px;
+  height: 25px;
+  color: red;
+  position: absolute;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+.remove:hover{
+  background-color: red;
+  color: white;
+}

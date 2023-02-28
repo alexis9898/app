@@ -1,0 +1,80 @@
+<p>category works!</p>
+
+<!-- <div *ngFor="let c of categories" class="card" >
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{c.name}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <button (click)="GoShopping(c)" class="btn btn-primary">Go somewhere</button>
+  </div>
+</div> -->
+
+
+<div class="container-category">
+
+  <div (mouseleave)="outCategory1()" class="d-flex flex-column dad-main ">
+
+
+    <div class="main-cat" >
+      <div  (click)="GoShopping(item)" #itemElem (mouseenter)="enterCategory1(item,i)" class="main d-flex flex-row" *ngFor="let item of CategoryList; let i=index">
+        <div *ngIf="i === hoverCategoryIndex && hoverCategory1"  class="hover-main blue"></div>
+        <div  class="active-main" hover-class=" blue" ></div>
+        <div > </div>
+        <span>{{item.name}}</span>
+        <span class=" icon-show">^</span>
+      </div>
+    </div>
+
+
+    <div Class="d-flex flex-row tat-category" id="tat-category" *ngIf="hoverCategory1" >
+      <div  class="d-flex flex-column category1-list">
+        <div (click)="GoShopping(cat)" (mouseenter)="enterCategory2(cat)" class="d-flex flex-row category1 "  *ngFor="let cat of category1">
+          <!-- <div></div> -->
+          <div>{{cat.name}}</div>
+          <div class="icon-show1">^</div>
+        </div>
+      </div>
+
+      <div *ngIf="!hoverCategory2" class="pirsum" >
+        <div >pirsum</div>
+        <div >pirsum</div>
+      </div>
+
+      <div  *ngIf="hoverCategory2" class="category2">
+        <div  *ngFor="let cat of category2" class="category2-list">
+          <a class="a" (click)="GoShopping(cat)"><h4>{{cat.name}}</h4></a>
+          <div  *ngFor="let cat1 of cat.children">
+            <a class="a" (click)="GoShopping(cat1)"><span>{{cat1.name}}</span></a>
+          </div>
+        </div>
+        <div class=""></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <ng-template #category let-children="children" >
+  <p *ngFor="let category of children"> {{category.name}}</p>
+</ng-template> -->
+
+<!-- //run over categoryList: -->
+<!-- <div *ngFor="let cat of CategoryList">
+  <h1>{{cat.name}}</h1>
+  <div  *ngTemplateOutlet="category; context:{children:cat.children}"></div>
+</div>
+
+<ng-template #category let-children="children" >
+  <div *ngFor="let cat of children">
+    <p>{{cat.name}}</p>
+    <div *ngIf="cat.children.length>0">
+      <div *ngTemplateOutlet="category; context:{children:cat.children}"></div>
+    </div>
+  </div>
+</ng-template> -->
+
+
