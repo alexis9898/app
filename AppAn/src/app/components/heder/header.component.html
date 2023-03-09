@@ -1,74 +1,65 @@
-<div class="info-header">
-  <ul class="d-flex info-header">
-    <li><a href="">
-      סניפים
-    </a>
-    </li>
-    <li>
-      <a href="">
-        קבוצת שופרסל
-      </a>
-    </li>
-    <li>
-      <a href="">
-        נגישות
-      </a>
-    </li>
-    <li class="last"><a href="">
-      שירות לקוחות ותקנונים
-    </a>
-    </li>
-  </ul>
-</div>
-
-<div class="header-wrapper">
-
-  <div class="d-flex flex-row center up-heder cart-list">
-    <div class="list  ">
-        <a class="" href="">
-            <img
-              class="full"
-              src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
-              alt=""
-            />
-            <span class="sum">1</span>
-        </a>
-    </div>
-
-    <div class="list  ">
-        <a class="" href="">
-            <img
-              class="full"
-              src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
-              alt=""
-            />
-            <span class="sum">1</span>
-        </a>
-    </div>
-</div>
-
-  <div class="search d-flex ">
-    <button class="">
-      <img class="full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzHiHC4a6mv3Gkd6LJVo_0p6rlFUvx2oOKqg&usqp=CAU" alt="">
-    </button>
-    <input type="text" class="text" />
+<div class="wrapper">
+  <div class="info-header">
+    <ul class="d-flex info-header">
+      <li><a href=""> סניפים </a></li>
+      <li>
+        <a href=""> קבוצת שופרסל </a>
+      </li>
+      <li>
+        <a href=""> נגישות </a>
+      </li>
+      <li class="last"><a href=""> שירות לקוחות ותקנונים </a></li>
+    </ul>
   </div>
 
-  <div class="logo-image center d-flex">
-    <img
-      class="full"
-      src="https://www.shufersal.co.il/online/medias/sys_master/root/h18/hc4/11095082172446/logo-online.png"
-      alt=""
-    />
+  <div class="header-wrapper">
+    <div class="d-flex flex-row center up-heder cart-list">
+      <div class="list">
+        <a class="" href="">
+          <img
+            class="full"
+            src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+            alt=""
+          />
+          <span class="sum">1</span>
+        </a>
+      </div>
+
+      <div class="list">
+        <a class="" href="">
+          <img
+            class="full"
+            src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+            alt=""
+          />
+          <span class="sum">1</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="search d-flex">
+      <button class="">
+        <img
+          class="full"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzHiHC4a6mv3Gkd6LJVo_0p6rlFUvx2oOKqg&usqp=CAU"
+          alt=""
+        />
+      </button>
+      <input type="text" class="text" />
+    </div>
+
+    <div class="logo-image center d-flex">
+      <img
+        class="full"
+        src="https://www.shufersal.co.il/online/medias/sys_master/root/h18/hc4/11095082172446/logo-online.png"
+        alt=""
+      />
+    </div>
   </div>
-</div>
 
-<section>
+  <section></section>
 
-</section>
-
-
-<!-- <nav class="navbar navbar-expand-lg bg-light">
+  <!-- <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,122 +96,126 @@
   </div>
 </nav> -->
 
-<!-- <link rel="stylesheet" href="./header.css"> -->
+  <!-- <link rel="stylesheet" href="./header.css"> -->
+  <div class="second-header-wrapper">
+  <app-category></app-category>
+  <cart ></cart>
+  </div>
+  <nav *ngIf="false" class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Alex</a>
 
-<nav *ngIf="true" class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Alex</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div
-      class="collapse navbar-collapse d-flex-row info-menu"
-      id="navbarSupportedContent"
-    >
-      <div class="menu-links">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/produts']"
-              >Products</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/news']"
-              >news</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/aboutus']"
-              >About us</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/cart']"
-              >Cart</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/calculator']"
-              >Calculator</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/category']"
-              >Category</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLinkActive="active"
-              [routerLink]="['/management']"
-              >management</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div>
-        <form
-          class="navbar-form navbar-left searchHeader"
-          action="/action_page.php"
-        >
-          <div class="form-group searchArea">
-            <input
-              onfocus="removeS()"
-              onkeypress="check(this)"
-              type="text"
-              class="form-control textHeader"
-              placeholder="Search"
-            />
-            <span id="search"></span>
-          </div>
-          <button type="submit" class="btn btn-outline-secondary">
-            Submit
-          </button>
-        </form>
-      </div>
-      <div class="menu-login menu-links">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#"
-              ><span class="glyphicon glyphicon-user"></span> Sign Up</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"
-              ><span class="glyphicon glyphicon-log-in"></span> Login</a
-            >
-          </li>
-        </ul>
+      <div
+        class="collapse navbar-collapse d-flex-row info-menu"
+        id="navbarSupportedContent"
+      >
+        <div class="menu-links">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/produts']"
+                >Products</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/news']"
+                >news</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/aboutus']"
+                >About us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/cart']"
+                >Cart</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/calculator']"
+                >Calculator</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/category']"
+                >Category</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/management']"
+                >management</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <form
+            class="navbar-form navbar-left searchHeader"
+            action="/action_page.php"
+          >
+            <div class="form-group searchArea">
+              <input
+                onfocus="removeS()"
+                onkeypress="check(this)"
+                type="text"
+                class="form-control textHeader"
+                placeholder="Search"
+              />
+              <span id="search"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-secondary">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="menu-login menu-links">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="glyphicon glyphicon-log-in"></span> Login</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>

@@ -1,9 +1,8 @@
 
 .container-category{
   position: relative;
-  /* width: 100%; */
+  display: inline-flex;
   background-color: red;
-  display: flex;
   flex-direction: row;
   /* height: 7rem; */
 }
@@ -16,7 +15,7 @@
   background-color: blue;
 }
 .main-cat {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   background-color: #f1f6ff;
   box-shadow: 6px 8px 10px rgb(215 221 232 / 80%);

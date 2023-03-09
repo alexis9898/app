@@ -28,10 +28,10 @@
               <span>^</span>
             </button>
              <div class="sort-list {{sortListClass}}">
-              <div (click)="sort('price',false)">price</div>
-              <div class="revers" (click)="sort('price',true)">price</div>
-              <div (click)="sort('name',false)">name</div>
-              <div  (click)="sort('name',true)">name</div>
+              <div (click)="onSortByPrice(false)">price</div>
+              <div  (click)="onSortByPrice(true)">price</div>
+              <div (click)="onSortByName(false)">name</div>
+              <div  (click)="onSortByName(true)">name</div>
               <div>sd</div>
               <div>sd</div>
              </div>
@@ -43,8 +43,8 @@
     <div class="btn" (click)="column='column'" >culomn</div> -->
     <div class="d-flex flex-row detail">
       <div class="info-category"></div>
-      <div class="product-list {{option}} {{reverseClass}}">
-        <div class="product " *ngFor="let p of products | productsSort : sortingBy">
+      <div class="product-list {{option}}">
+        <div class="product " *ngFor="let p of products ">
           <div class="img">
             <img
               *ngFor="let img of p.images.slice(0, 1)"

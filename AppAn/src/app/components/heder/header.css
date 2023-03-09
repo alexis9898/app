@@ -1,4 +1,12 @@
+.wrapper {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
 
+.second-header-wrapper {
+  display: inline;
+}
 
 .searchHeader {
   display: flex;
@@ -94,7 +102,7 @@ background-color: #e7e7e7;
   height: 32px;
   width: 32px;
 }
-.list>a{
+.list > a {
   border: none;
 }
 .icon {
@@ -120,19 +128,18 @@ a {
   text-decoration: none;
 }
 
-.center{
+.center {
   justify-content: center;
   align-items: center;
-
 }
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   padding: 15px;
   align-items: center;
-  flex-direction:row-reverse;
+  flex-direction: row-reverse;
 }
-.header-wrapper>div{
+.header-wrapper > div {
   /* height: 40px; */
   /* border: 1px solid; */
 }
@@ -141,60 +148,60 @@ a {
   border-radius: 24px;
   box-shadow: 0 0 8px 0 rgb(131 146 184 / 24%);
   background-color: #fff;
-  border: 1px solid rgba(89,134,178,.36);
+  border: 1px solid rgba(89, 134, 178, 0.36);
   padding: 8px;
   /* height: 48px; */
   width: 670px;
   height: 46px;
 }
-.text{
+.text {
   border: none;
   outline: none;
   width: 60%;
   direction: rtl;
   margin-left: auto;
 }
-.info-header{
+.info-header {
   gap: 15px;
   size: 1.2rem;
   padding-left: 3px;
   margin: 0;
+  background-color: white;
 }
-.info-header>li{
+.info-header > li {
   font-size: 1rem;
   margin-top: 3px;
   text-align: center;
   align-items: center;
-    /* font-size: 1.3em; */
-    /* line-height: 1.2; */
+  /* font-size: 1.3em; */
+  /* line-height: 1.2; */
 }
 
-ul{
+ul {
   list-style-type: none;
 }
-a{
+a {
   color: #3f5ba0;
-  transition: all .3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
   font-family: opensanshebrew-regular-webfont;
 }
-a:hover{
+a:hover {
   color: #337ab7;
-  transition: all .3s ease-out 0s;
-  border-bottom: 1px solid #2f416e ;
+  transition: all 0.3s ease-out 0s;
+  border-bottom: 1px solid #2f416e;
 }
-.last{
+.last {
   font-weight: bold;
-  border-right:1px solid #3f5ba0 ;
-  padding-right:12px ;
+  border-right: 1px solid #3f5ba0;
+  padding-right: 12px;
   height: 70%;
 }
-button{
+button {
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
-

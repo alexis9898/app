@@ -129,4 +129,21 @@ export class ProductsComponent {
     }
     this.sortShow();
   }
+
+  onSortByPrice(bool: Boolean) {
+    if(!bool)
+    this.products.sort((a,b) => a.price - b.price)
+    else{
+      this.products.sort((a,b) => b.price - a.price)
+    }
+
+  }
+
+  onSortByName(bool: Boolean) {
+    if(!bool)
+    this.products.sort((a,b) => a.name.localeCompare(b.name))
+    else{
+      this.products.sort((a,b) => b.name.localeCompare(a.name))
+    }
+  }
 }

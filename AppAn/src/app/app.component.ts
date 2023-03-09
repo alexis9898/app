@@ -8,17 +8,18 @@ import { Cart } from './models/cart';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('cart') cartElement:ElementRef;
+  // @ViewChild('cart') cartElement:ElementRef;
 
 
   ngOnInit(){
 
   }
 
-  fullScreen(){
-    if(this.cartElement.nativeElement.offsetHeight<300){
-      return 'full-width';
-    }
-    return;
-  }
+  // fullScreen(){
+  //   if(this.cartElement.nativeElement.offsetHeight<300){
+  //     return 'full-width';
+  //   }
+  //   return;
+  // }
 }
+//

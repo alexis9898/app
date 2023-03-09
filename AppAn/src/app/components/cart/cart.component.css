@@ -1,20 +1,30 @@
+.container {
+  /* display: none; */
+  /* position: fixed; */
+  padding: 0;
+  margin: 0;
+  float: left;
+  z-index: 200000;
+  top: 0;
+  left: 0;
+  border: 1px solid red;
+  width: 30%;
+  background-color: white;
+}
 
-/* .container{
-  padding: 10px;
-} */
-.head{
+.head {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border:none;
+  border: none;
   padding: 5px;
   background-color: #fcfcfe;
   border-bottom: 1px solid #e1e6f2;
   border-top: 1px solid #e1e6f2;
   height: 4rem;
 }
-.info{
+.info {
   background-color: #002863;
   color: #fff;
   padding: 10px;
@@ -23,12 +33,12 @@
   position: relative;
 }
 
-.show-info{
+.show-info {
   visibility: hidden;
   opacity: 0;
   position: absolute;
   bottom: 0;
-  transform:translateY(100%) ;
+  transform: translateY(100%);
   z-index: 1;
   color: #233971;
   background-color: white;
@@ -41,96 +51,94 @@
   transition: 0.3s linear;
   /* height: 0px; */
 }
-.info:hover .show-info{
+.info:hover .show-info {
   /* height: auto; */
   opacity: 1;
   visibility: visible;
 }
-.show-info>div{
+.show-info > div {
   display: flex;
   flex-direction: column;
 }
-.show-info>div>div{
+.show-info > div > div {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   gap: 3px;
 }
-.bold{
+.bold {
   font-weight: 500;
 }
-.prd-list{
+.prd-list {
   padding: 10px;
   overflow: auto;
   gap: 5px;
   /* transition: 1s linear; */
   /* height: 1rem; */
 }
-.cart-empty{
+.cart-empty {
   align-items: center;
 }
-.cart-empty img{
-
+.cart-empty img {
 }
-.prd{
+.prd {
   display: flex;
   flex-direction: row;
-
 }
-.img{
+.img {
   width: 80px;
   height: 70px;
   border-left: 1px solid #e1e6f2;
   padding: 0 5px;
 }
-.img>img{
+.img > img {
   width: 100%;
   height: 100%;
 }
-.prd-detile{
+.prd-detile {
   display: flex;
   flex-direction: column;
 }
 
-.cart-min .prd-list{
+.cart-min .prd-list {
   height: 21rem;
   border: 1px solid aqua;
 }
-.sum{
+.sum {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 20px 0;
+  padding: 15px 0;
+  align-self: center;
 }
-.hide{
+.hide {
   /* animation: close 1s  linear ; */
   height: 0 !important;
   /* visibility: hidden;  animation-name: close;
   animation-duration: 1s; */
   overflow: hidden;
 }
-.transition{
+.transition {
   transition: 0.3s linear;
 }
-.cart-min .transition{
+.cart-min .transition {
   height: 30.5rem;
   overflow: hidden;
 }
 @keyframes open {
-  0%{
+  0% {
     height: 0%;
   }
-  100%{
+  100% {
     height: 100%;
   }
 }
 @keyframes close {
-  0%{
+  0% {
     height: 100%;
   }
-  100%{
+  100% {
     height: 0;
     overflow: hidden;
     visibility: hidden;
   }
 }
-

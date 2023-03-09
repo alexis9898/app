@@ -1,43 +1,36 @@
-.relative{
+.relative {
   position: relative;
   /* overflow:visible; */
 }
 
-.absolute{
+.absolute {
   position: absolute;
   bottom: 0;
   /* transform: translateY(100%) ; */
   border: 1px solid blue;
-  margin-top:300px ;
+  margin-top: 300px;
 }
-.cart{
-  position: absolute;
-  z-index: 200000;
-  top: 0;
-  left: 0;
-  border: 1px solid red;
-  width: 30%;
-  background-color: white;
+
+.cart {
+  transform: translateY(-30px);
 }
-.fix{
+
+/* .fix {
   width: 100%;
   position: fixed;
-  z-index: 100;
-  background-color: white;
-}
+  z-index: 10000000000000000000;
+  /* background-color: white; */
+/* } */
 
-
-.h{
- height: 18rem;
-}
-body{
+/* .h {
+  height: 18rem;
+} */
+body {
   position: relative;
   overflow: scroll;
 }
 
-
-  /* .cart .prd-list{
+/* .cart .prd-list{
     height: 26rem;
     overflow: auto;
   } */
-
