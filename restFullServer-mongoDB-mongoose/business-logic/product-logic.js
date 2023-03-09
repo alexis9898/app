@@ -70,6 +70,9 @@ function getAllCategoryWithHisProductsAsync() {
 async function getAllProductsWithImeges() {
   return Product.find({}).populate("images").populate("").exec();
 }
+async function getProductWithImeges(prdId) {
+  return Product.findOne({_id:prdId}).populate("images").exec();
+}
 async function getAllProductsOfOneCategoryWithImeges(categoryId) {
   return Product.find({ categoryId: categoryId }).populate("images").exec();
 }
@@ -103,4 +106,5 @@ module.exports = {
   getAllCategoryWithHisProductsAsync,
   getAllProductsWithImeges,
   getAllProductsOfOneCategoryWithImeges,
+  getProductWithImeges,
 };

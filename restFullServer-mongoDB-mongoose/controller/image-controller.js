@@ -18,6 +18,14 @@ router.get("/", async (request, response) => {
       response.status(500).send(err.message); 
     }});
 
+// router.get("/", async (request, response) => {
+//     try {
+//         const Images = await ImagesLogic.getAllImageAsync();
+//         response.json(Images); 
+//     } catch (err) {
+//         response.status(500).send(err.message); 
+// }});
+
 router.post("/", async (request, response) => {
     try {
         if(!request.body.productId){ //productId, path 

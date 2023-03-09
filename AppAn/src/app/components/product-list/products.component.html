@@ -17,9 +17,25 @@
             <span>(12)</span>
           </div>
         </div>
-        <div>
-          <button (click)="column()" class="icon-column">column</button>
-          <button (click)="row()" class="icon-row">row</button>
+        <div class="d-flex flex-row">
+          <div>
+            <button (click)="column()" class="icon-column">column</button>
+            <button (click)="row()" class="icon-row">row</button>
+          </div>
+          <div class="sort d-flex flex-column">
+            <button (click)="sortShow()" class="d-flex flex-row">
+              <span>sort</span>
+              <span>^</span>
+            </button>
+             <div class="sort-list {{sortListClass}}">
+              <div (click)="sort('price',false)">price</div>
+              <div class="revers" (click)="sort('price',true)">price</div>
+              <div (click)="sort('name',false)">name</div>
+              <div  (click)="sort('name',true)">name</div>
+              <div>sd</div>
+              <div>sd</div>
+             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -27,8 +43,8 @@
     <div class="btn" (click)="column='column'" >culomn</div> -->
     <div class="d-flex flex-row detail">
       <div class="info-category"></div>
-      <div class="product-list {{option}}">
-        <div class="product " *ngFor="let p of products">
+      <div class="product-list {{option}} {{reverseClass}}">
+        <div class="product " *ngFor="let p of products | productsSort : sortingBy">
           <div class="img">
             <img
               *ngFor="let img of p.images.slice(0, 1)"
@@ -65,10 +81,10 @@
       </div>
     </div>
   </div>
-  <div class="cart">
+  <!-- <div class="cart">
     <cart></cart>
     <app-chek-out></app-chek-out>
-  </div>
+  </div> -->
 </div>
 
 <div *ngIf="false" class="container-p">
@@ -85,7 +101,7 @@
         <div class="d-flex flex-row gap">
           <button
             [class.active]="sortingBy == 'price'"
-            (click)="sort('price')"
+            (click)="sort('price',false)"
             type="button"
             class="btn btn-outline-secondary"
           >
@@ -93,7 +109,7 @@
           </button>
           <button
             [class.active]="sortingBy == 'name'"
-            (click)="sort('name')"
+            (click)="sort('name',false)"
             type="button"
             class="btn btn-outline-secondary"
           >

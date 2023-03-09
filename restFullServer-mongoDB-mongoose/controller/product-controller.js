@@ -20,6 +20,25 @@ router.get("/", async (request, response) => {
   }
 });
 
+
+router.post("/get-product-with-images",async (request, response)=>{
+  try {  
+    const productId = request.body.productId;
+    const prdWithImage=await productLogic.getProductWithImeges(productId);
+    console.log(prdWithImage);
+    if(!prdWithImage){
+      response.status(400);
+      return;
+    }
+    response.send(prdWithImage);
+  } catch (err) {
+    ponse.status(500).send(err.message);
+  }
+
+  
+});
+
+
 //post(add) full product
 router.post("/", async (request, response) => {
   try {

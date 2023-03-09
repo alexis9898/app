@@ -43,6 +43,10 @@ export class ProductsService {
     return this.http.get<Product[]>('http://localhost:3000/api/products/all-products-with-images');
   }
 
+  getOneProductsWithImages2(productId:string) {
+    return this.http.post<Product>('http://localhost:3000/api/products/get-product-with-images',{productId:productId});
+  }
+
   postNewProduct(product:Product){
     return this.http.post<Product>('http://localhost:3000/api/products',product);
   }

@@ -25,6 +25,9 @@ import { ManagementComponent } from './components/management/management.componen
 import { ManagementAddComponent } from './components/management-add/management-add.component';
 import { ManagementChangeComponent } from './components/management-change/management-change.component';
 import { ProductComponent } from './components/product/product.component';
+import { CookieService } from 'ngx-cookie-service';
+
+// import { CookieService }
 
 
 @NgModule({
@@ -44,16 +47,16 @@ import { ProductComponent } from './components/product/product.component';
     ManagementComponent,
     ManagementAddComponent,
     ManagementChangeComponent,
-    ProductComponent
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingMoudle,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
-  providers: [CartService],
+  providers: [CartService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,16 +1,18 @@
 
 .container-category{
   position: relative;
-  width: 100vw;
+  /* width: 100%; */
   background-color: red;
+  display: flex;
+  flex-direction: row;
   /* height: 7rem; */
 }
 
 .dad-main{
-  max-width: 1200px;
+  /* max-width: 1200px; */
   border: 1px solid lightblue;
   direction: rtl;
-
+  width: 70%;
   background-color: blue;
 }
 .main-cat {
@@ -38,7 +40,7 @@
   background-color: white;
 }
 .active{
-  
+
 }
 .blue{
   width: 100%;
@@ -68,9 +70,11 @@
   transform: translateY(100%);
   border: 1px solid;
   padding: 10px;
-  width: 1200px;
+  width: inherit;
   background-color: white;
   height: 30rem;
+  /* max-width: 1100px; */
+
   /* justify-content: space-around; */
   /* background-color: #0059ff; */
   /* width: 100%; */
@@ -141,4 +145,11 @@ a{
   color: #0262f2;
   text-decoration: underline  #0262f2;
 }
+.cart{
+  width: 30%;
+  position: absolute;
+  left: 0;
+}
+
+
 

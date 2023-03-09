@@ -10,6 +10,9 @@ async function addNewImageAsync(image) {
 async function getAllImageAsync(image) {
   return Image.find().exec(); //exec()-> function return promis
 }
+function getImagesAsync(productId) {
+  return Image.find().exec(); //exec()-> function return promis
+}
 function findProductAllImageAsync(image) {
     return Image.find().exec(); //exec()-> function return promis
 }
@@ -22,5 +25,6 @@ module.exports={
     addNewImageAsync,
     getAllImageAsync,
     findProductAllImageAsync,
-    deleteproductAsync
+    deleteproductAsync,
+    getImagesAsync
 }

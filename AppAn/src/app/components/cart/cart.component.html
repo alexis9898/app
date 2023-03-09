@@ -13,40 +13,41 @@
 </style>
 
 
-<div class="container">
-  <div class="head">
-    <span>הסל שלי</span>
-    <div class="d-flex flex-column align-items-center">
-      <span>foto</span>
-      <span>ניקוי הסל</span>
-    </div>
-  </div>
-
-  <div class="d-flex flex-column info">
-
-    <div class="show-info">
-      <div>
-        <span class="bold">דמי משלוח</span>
-        <div>
-          <span>בקניה בסכום של עד 750 ₪ - דמי משלוח</span>
-          <span class="bold"> 30 ₪</span>
-        </div>
-        <div>
-          <span>בקניה בסכום גבוה מ 750 ₪ - דמי משלוח </span>
-          <span class="bold"> 10 ₪</span>
-        </div>
-        <div>
-        </div >
+<div  #listEl class="container {{minClassCart}}">
+  <div class="transition {{hide}}">
+    <div  class="head">
+      <span>הסל שלי</span>
+      <div class="d-flex flex-column align-items-center">
+        <span>foto</span>
+        <button (click)="cartService.removeCart()">ניקוי הסל</button>
       </div>
-      <div>
-        <span class="bold">דמי שירות באיסוף עצמי</span>
+    </div>
+
+    <div class="d-flex flex-column info">
+
+      <div class="show-info">
         <div>
-          <span>בקניה בסכום של עד 750 ₪ - דמי שרות</span>
-          <span class="bold">15 ₪</span>
+          <span class="bold">דמי משלוח</span>
+          <div>
+            <span>בקניה בסכום של עד 750 ₪ - דמי משלוח</span>
+            <span class="bold"> 30 ₪</span>
+          </div>
+          <div>
+            <span>בקניה בסכום גבוה מ 750 ₪ - דמי משלוח </span>
+            <span class="bold"> 10 ₪</span>
+          </div>
+          <div>
+          </div >
         </div>
         <div>
-          <span>בקניה בסכום גבוה מ 750 ₪ - דמי שרות </span>
-          <span class="bold" >10 ₪</span>
+          <span class="bold">דמי שירות באיסוף עצמי</span>
+          <div>
+            <span>בקניה בסכום של עד 750 ₪ - דמי שרות</span>
+            <span class="bold">15 ₪</span>
+          </div>
+          <div>
+            <span>בקניה בסכום גבוה מ 750 ₪ - דמי שרות </span>
+            <span class="bold" >10 ₪</span>
         </div>
       </div>
       <div>
@@ -69,22 +70,38 @@
   </div>
 
   <div class="d-flex flex-column prd-list">
+
     <div class="prd" *ngFor="let p of cart1">
       <div class="img">
         <img *ngFor="let img of p.images.slice(0, 1)"
         src="/assets/product-images/{{ img.path }}"
         alt="">
       </div>
-      <div class="prd-detile">
+      <div  class="prd-detile" ngClass="">
         <div>{{p.name}}</div>
         <div>₪{{p.price*p.quantity}}</div>
         <div>{{p.quantity}}</div>
       </div>
     </div>
+
+    <div class="d-flex flex-column cart-empty" *ngIf="cart1.length==0">
+      <h4>שנתחיל ללמוד</h4>
+      <img  src="https://www.shufersal.co.il/online/_ui/responsive/theme-miglog/img/cart/emptyCartToFill.png" alt="">
+    </div>
+  </div>
+  </div>
+
+  <div class="sum">
+    <button (click)="hideOrShow()">up</button>
+    <span>כולל דמי משלוח/שרות</span>
+    <button class="pay">
+      <span>לתשלום:</span>
+      <span>33</span>
+    </button>
   </div>
 </div>
 
-<div  class="container">
+<div *ngIf="false"  class="container">
   <div class="card">
     <div class="card-header">
       <h2 >My Cart</h2>

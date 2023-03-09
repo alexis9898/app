@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { CartComponent } from './components/cart/cart.component';
+import { Cart } from './models/cart';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('cart') cartElement:ElementRef;
 
+
+  ngOnInit(){
+
+  }
+
+  fullScreen(){
+    if(this.cartElement.nativeElement.offsetHeight<300){
+      return 'full-width';
+    }
+    return;
+  }
 }

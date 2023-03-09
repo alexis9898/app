@@ -13,12 +13,14 @@ import { Cart } from '../../models/cart';
 })
 export class ProductsComponent {
   public products: Array<Product> = [];
-  public cart: Array<Cart<Product>> = [];
+  // public cart: Array<Cart<Product>> = [];
   public cart1: Array<Product> = [];
   option = 'row1';
   searchProduct!: string;
   sortingBy!: string;
+  reverseClass='';
 
+  sortListClass='';
   constructor(
     public cartService: CartService,
     private productsService: ProductsService
@@ -50,76 +52,21 @@ export class ProductsComponent {
       console.log(productCart);
     });
 
-    // setTimeout(() => {
-    //   this.productsService.editProduct1();
-    // }, 3000);
-    // setTimeout(() => {
-    //   this.productsService.productsChange.next([<Product>{ProductName: 'banna',
-    //     ProductId: 2,
-    //     UnitPrice: 5,
-    //     }]);
-    // }, 4000);
-    // setTimeout(() => {
-    //   this.productsService.productsChange.next(this.products);
-    // }, 5000);
-
-    //my produts(not from servise)
-    // let product1: Product = <Product>{
-    //   ProductName: 'apple',
-    //   ProductId: 1,
-    //   UnitPrice: 3,
-    //   UnitsInStock: 5,
-    // };
-    // let product2: Product = {
-    //   ProductName: 'banna',
-    //   ProductId: 2,
-    //   UnitPrice: 5,
-    //   UnitsInStock: 5,
-    // };
-
-    // let product3: Product = {
-    //   ProductName: 'kiwi',
-    //   ProductId: 1,
-    //   UnitPrice: 9,
-    //   UnitsInStock: 5,
-    // };
-
-    // this.products = new Array<Product>(
-    //   product1,
-    //   product2,
-    //   product3,
-
-    //   <Product>{
-    //     ProductName: 'kiwi',
-    //     ProductId: 1,
-    //     UnitPrice: 9,
-    //     UnitsInStock: 5,
-    //   }
-    // );
 
     console.log('Sone..');
   }
+  sortShow(){
+    if(this.sortListClass===''){
+      this.sortListClass='hide';
+    }else{
+      this.sortListClass='';
+    }
+  }
 
   AddToCard(p2buy: Product) {
-    console.log(`${p2buy} added to chard`);
-    this.cartService.addProductToCart(p2buy).subscribe();
-    // let cartCustomer=this.cart.find((cart,i)=>{
-    //   if(cart.product===p2buy){
-    //     this.cart[i].amount++;
-    //     return true;
-    //   }
-    //   return;
-    // });
-    // if(!cartCustomer){
-    //   let cart= {
-    //     product:{
-    //       ...p2buy
-    //     },
-    //     amount:1
-    //   }
-    //   this.cart.push(cart);
-    // }
-    // this.cartService.MyShoppingList.next(this.cart);
+    console.log(`${p2buy} added to cart`);
+    this.cartService.addProductToCart(p2buy);
+
   }
 
   addPrd(p2buy: Product) {
@@ -132,18 +79,9 @@ export class ProductsComponent {
     p2buy.quantity--;
   }
   sendToCart(p2buy: Product) {
-    let product = this.cart1.find((cart, i) => {
-      if (cart._id === p2buy._id) {
-        this.cart1[i].quantity = p2buy.quantity;
-        return true;
-      }
-      return;
-    });
-    console.log(product);
-    if (!product) {
-      this.cart1.push(p2buy);
-    }
-    this.cartService.MyShoppingList1.next(this.cart1);
+    this.cartService.addProductToCart(p2buy);
+    // this.cart1.push(p2buy);
+    // this.cartService.MyShoppingList1.next(this.cart1);
   }
   row(){
     this.option='row1'
@@ -166,6 +104,8 @@ export class ProductsComponent {
   }
 
   addCart1(p2buy: Product) {
+    this.cartService.addProductToCart(p2buy);
+    this.cartService.MyShoppingList1.next(this.cart1);
     let product = this.cart1.find((cart, i) => {
       if (cart._id === p2buy._id) {
         this.cart1[i].quantity++;
@@ -179,9 +119,14 @@ export class ProductsComponent {
       this.cart1.push(p2buy);
     }
 
-    this.cartService.MyShoppingList1.next(this.cart1);
   }
-  sort(sortBy: string) {
+  sort(sortBy: string,reverse:boolean) {
     this.sortingBy = sortBy;
+    if(reverse){
+      this.reverseClass='reverse';
+    }else{
+      this.reverseClass='';
+    }
+    this.sortShow();
   }
 }
