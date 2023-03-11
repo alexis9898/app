@@ -2,6 +2,7 @@
   position: sticky;
   top: 0;
   background-color: white;
+
 }
 
 .second-header-wrapper {
@@ -11,6 +12,7 @@
 .searchHeader {
   display: flex;
   flex-direction: row;
+
 }
 @media (max-width: 768px) {
   .searchHeader {

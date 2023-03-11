@@ -71,7 +71,6 @@
 }
 .head-prds {
   padding: 10px;
-  width: 100%;
 }
 .option {
   justify-content: space-between;
@@ -116,7 +115,6 @@
 .column1 .reverse{
   flex-direction: row-reverse;
 } */
-
 
 .product {
   display: flex;
